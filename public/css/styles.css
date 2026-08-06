@@ -1,0 +1,65 @@
+:root {
+  font-family: "Retail Demo", Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  background-color: var(--primary);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --primary: #242424;
+  --secondary: #575757;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  margin: 40px 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+}
+
+.add-message {
+  margin: 10px;
+}
+
+button {
+  appearance: auto;
+  padding: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--secondary);
+  max-width: 80vw;
+  border-radius: 5px;
+  padding: 40px;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+}
