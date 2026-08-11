@@ -10,7 +10,7 @@ const messages = [
     added: new Date().toDateString(),
   },
   {
-    text: "Let's see what this book an do...",
+    text: "Let's see what this book can do...",
     user: "Abrams",
     added: new Date().toDateString(),
   },
@@ -20,4 +20,8 @@ const board_index = (req, res) => {
   res.render("index", { messages: messages });
 };
 
-module.exports = { board_index };
+const board_new = (req, res) => {
+  res.render("new");
+};
+
+module.exports = { board_index, board_new };
