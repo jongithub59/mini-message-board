@@ -19,11 +19,15 @@
             <% messages.forEach(msg => { %>
               <div class="message">
 
-                <div class="message-header"><h3 class="user-name"><%= msg.user %></h3> <p class="message-date"><%= msg.added %></p></div>
+                <div class="message-header">
+                  <h3 class="user-name"><%= msg.user %></h3> 
+                  <p class="message-date"><%= msg.added %></p>
+                </div>
                 <hr>
+
                 <div class="message-content"><p class="message-text"><%= msg.text %></p></div>
               </div>
-              <% }) %>
+            <% }) %>
           </div>
         </div>
       </div>
