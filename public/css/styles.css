@@ -88,20 +88,16 @@ button {
   margin: 40px 0;
 }
 
-.form {
-  max-width: 400px;
-  margin: 0 auto;
+form {
+  max-width: 500px;
+  margin: 10px auto;
 }
 
 input {
   display: block;
   width: 100%;
-  padding: 8px;
-}
-
-label {
-  display: block;
-  margin-top: 24px;
+  padding: 5px;
+  margin: 10px 0;
 }
 
 textarea {

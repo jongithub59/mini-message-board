@@ -24,4 +24,18 @@ const board_new = (req, res) => {
   res.render("new");
 };
 
-module.exports = { board_index, board_new };
+const board_new_post = (req, res) => {
+  //get content of form through req
+  const text = req.body.messageField;
+  const user = req.body.userField;
+
+  messages.push({
+    text: text,
+    user: user,
+    added: new Date().toDateString(),
+  });
+
+  res.redirect("/");
+};
+
+module.exports = { board_index, board_new, board_new_post };
