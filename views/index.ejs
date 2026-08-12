@@ -18,16 +18,20 @@
       <div class="content">
         <div class="board">
           <div class="messages">
-            <% messages.forEach(msg => { %>
+            <% messages.forEach((msg, index) => { %>
               <div class="message">
 
                 <div class="message-header">
                   <h3 class="user-name"><%= msg.user %></h3> 
-                  <p class="message-date"><%= msg.added %></p>
+                  <p class="message-date"><strong>Posted: </strong><%= msg.added %></p>
                 </div>
                 <hr>
 
-                <div class="message-content"><p class="message-text"><%= msg.text %></p></div>
+                <div class="message-content"><p class="message-text"><%= msg.text %></p>
+                <a class="open-message" href="/message/<%= index %>">
+                  <button >Open</button>
+                </a>
+              </div>
               </div>
             <% }) %>
           </div>

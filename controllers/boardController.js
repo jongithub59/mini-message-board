@@ -1,18 +1,22 @@
+const date = new Date();
 const messages = [
   {
     text: "The Baxter Society has your number!",
     user: "Shiv",
-    added: new Date().toDateString(),
+    added: date.toLocaleDateString(),
+    addedFull: date.toLocaleString(),
   },
   {
     text: "No more games...",
     user: "Mirage",
-    added: new Date().toDateString(),
+    added: date.toLocaleDateString(),
+    addedFull: date.toLocaleString(),
   },
   {
     text: "Let's see what this book can do...",
     user: "Abrams",
-    added: new Date().toDateString(),
+    added: date.toLocaleDateString(),
+    addedFull: date.toLocaleString(),
   },
 ];
 
@@ -38,4 +42,9 @@ const board_new_post = (req, res) => {
   res.redirect("/");
 };
 
-module.exports = { board_index, board_new, board_new_post };
+const board_details = (req, res) => {
+  const message = messages[req.params.id];
+  res.render("message", { message });
+};
+
+module.exports = { board_index, board_new, board_new_post, board_details };

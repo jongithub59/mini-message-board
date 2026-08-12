@@ -47,6 +47,7 @@ button {
   align-items: center;
   height: 100%;
   width: 100%;
+  margin: 50px 0;
 }
 
 .board {
@@ -79,13 +80,38 @@ button {
 }
 
 .message-content {
+  display: flex;
+  flex-direction: column;
   margin: 15px auto;
-  width: 80%;
-  /* justify-self: center; */
+  align-items: center;
+  justify-content: space-between;
 }
 
-.create-message {
-  margin: 40px 0;
+.message-text {
+  font-weight: bold;
+}
+
+.open-message {
+  justify-self: end;
+  align-self: end;
+  max-width: 70px;
+}
+
+.message-details .message {
+  max-width: 40%;
+  padding: 25px 15px;
+  border-radius: 10px;
+  background-color: var(--secondary);
+}
+
+.message-details .message-content {
+  display: flex;
+  min-height: 120px;
+}
+
+.message-details .message-exact-date {
+  align-self: start;
+  justify-self: end;
 }
 
 form {

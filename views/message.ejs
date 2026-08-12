@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Message Board</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <div class="message-details content">
+      <h1>Message Details</h1>
+      <div class="message">
+
+        <div class="message-header">
+            <h3 class="user-name"><%= message.user %></h3> 
+            <p class="message-date">Posted: <%= message.added %></p>
+        </div>
+        <hr>
+
+        <div class="message-content"><div class="message-details-content-top"></div><p class="message-text"><%= message.text %></p>
+          <p class="message-exact-date"><strong>Full Date: </strong><%= message.addedFull %></p>
+        </div>
+      </div>
+      <a href="/">
+          <button class="back">Back to Message Board</button>
+      </a>
+  </body>
+</html>
