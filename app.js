@@ -16,5 +16,5 @@ app.listen(PORT, (error) => {
   if (error) {
     throw error;
   }
-  console.log(`listening on port ${PORT}!`);
+  console.log(`listening on http://127.0.0.1:${PORT}`);
 });

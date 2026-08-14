@@ -1,22 +1,22 @@
 const date = new Date();
 const messages = [
   {
-    text: "The Baxter Society has your number!",
+    text: "About time someone called me",
     user: "Shiv",
-    added: date.toLocaleDateString(),
-    addedFull: date.toLocaleString(),
+    added: date.toLocaleString(),
+    addedFull: date.toString(),
   },
   {
     text: "No more games...",
     user: "Mirage",
-    added: date.toLocaleDateString(),
-    addedFull: date.toLocaleString(),
+    added: date.toLocaleString(),
+    addedFull: date.toString(),
   },
   {
     text: "Let's see what this book can do...",
     user: "Abrams",
-    added: date.toLocaleDateString(),
-    addedFull: date.toLocaleString(),
+    added: date.toLocaleString(),
+    addedFull: date.toString(),
   },
 ];
 
@@ -32,11 +32,13 @@ const board_new_post = (req, res) => {
   //get content of form through req
   const text = req.body.messageField;
   const user = req.body.userField;
+  const postDate = new Date();
 
   messages.push({
     text: text,
     user: user,
-    added: new Date().toDateString(),
+    added: postDate.toLocaleString(),
+    addedFull: postDate.toString(),
   });
 
   res.redirect("/");

@@ -12,6 +12,7 @@
   -moz-osx-font-smoothing: grayscale;
   --primary: #242424;
   --secondary: #575757;
+  --accent: #1dbb3f;
 }
 
 * {
@@ -21,7 +22,7 @@
 }
 
 .header {
-  margin: 40px 0;
+  margin: 40px 0 20px;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -33,12 +34,22 @@
   margin: 10px;
 }
 
+.add-message button {
+  padding: 20px;
+}
+
 button {
   appearance: auto;
   padding: 10px;
   font-size: 1em;
   cursor: pointer;
   margin: 5px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: var(--primary);
 }
 
 .content {
@@ -47,18 +58,15 @@ button {
   align-items: center;
   height: 100%;
   width: 100%;
-  margin: 50px 0;
 }
 
 .board {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--secondary);
   min-width: 750px;
   max-width: 80vw;
-  border-radius: 5px;
-  padding: 40px;
+  padding: 20px;
 }
 
 .messages {
@@ -72,19 +80,27 @@ button {
 .message {
   margin: 20px;
   width: 80%;
+  background-color: var(--secondary);
+  border-radius: 5px;
+  padding: 20px;
 }
 
 .message-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .message-content {
   display: flex;
   flex-direction: column;
-  margin: 15px auto;
+  margin: 20px auto 0;
   align-items: center;
   justify-content: space-between;
+}
+
+.message-date {
+  font-size: 0.8em;
 }
 
 .message-text {
@@ -97,16 +113,22 @@ button {
   max-width: 70px;
 }
 
+.create-message,
+.message-details {
+  padding-top: 9em;
+}
+
 .message-details .message {
-  max-width: 40%;
-  padding: 25px 15px;
-  border-radius: 10px;
+  max-width: 30%;
+  padding: 25px;
+  border-radius: 5px;
   background-color: var(--secondary);
 }
 
 .message-details .message-content {
   display: flex;
   min-height: 120px;
+  margin: auto;
 }
 
 .message-details .message-exact-date {
