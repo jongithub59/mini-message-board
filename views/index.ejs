@@ -22,15 +22,17 @@
               <div class="message">
 
                 <div class="message-header">
-                  <h3 class="user-name"><%= msg.user %></h3> 
-                  <p class="message-date"><strong>Posted: </strong><%= msg.added %></p>
+                  <div class="user-info">
+                    <h3 class="user-name"><%= msg.user %></h3> 
+                    <p class="message-date"><strong>Posted: </strong><%= msg.added %></p>
+                  </div>
+                <a class="open-message" href="/message/<%= index %>">
+                  <button >Open</button>
+                </a>
                 </div>
                 <hr>
 
                 <div class="message-content"><p class="message-text"><%= msg.text %></p>
-                <a class="open-message" href="/message/<%= index %>">
-                  <button >Open</button>
-                </a>
               </div>
               </div>
             <% }) %>

@@ -5,14 +5,22 @@
 
   color-scheme: light dark;
   background-color: var(--primary);
+  /* color: var(--accent); */
+
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --primary: #242424;
-  --secondary: #575757;
-  --accent: #1dbb3f;
+  --primary: #020202;
+  --secondary: #79634a;
+  --accent: #7c7c7c;
+  --border: #796349;
 }
 
 * {
@@ -21,8 +29,11 @@
   padding: 0;
 }
 
+main {
+  padding-top: 9em;
+}
+
 .header {
-  margin: 40px 0 20px;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -46,6 +57,7 @@ button {
   margin: 5px;
   border-radius: 5px;
   transition: 0.3s;
+  background-color: var(--secondary);
 }
 
 button:hover {
@@ -72,17 +84,19 @@ button:hover {
 .messages {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  min-width: 500px;
+  /* width: 80%; */
   justify-content: center;
   align-items: center;
+  /* background-color: var(--secondary); */
+  border: solid 5px var(--border);
+  border-radius: 10px;
 }
 
 .message {
   margin: 20px;
-  width: 80%;
-  background-color: var(--secondary);
-  border-radius: 5px;
-  padding: 20px;
+  width: 90%;
+  align-self: start;
 }
 
 .message-header {
@@ -94,9 +108,14 @@ button:hover {
 .message-content {
   display: flex;
   flex-direction: column;
-  margin: 20px auto 0;
-  align-items: center;
+  margin: 10px auto 0;
+  align-items: start;
   justify-content: space-between;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
 }
 
 .message-date {
@@ -105,12 +124,22 @@ button:hover {
 
 .message-text {
   font-weight: bold;
+  background-color: var(--secondary);
+  border-radius: 16px;
+  padding: 12px;
 }
 
 .open-message {
-  justify-self: end;
-  align-self: end;
+  /* justify-self: end;
+  align-self: end; */
   max-width: 70px;
+}
+
+.open-message button {
+  max-height: 35px;
+  font-size: 0.8em;
+  align-items: center;
+  padding: 5px;
 }
 
 .create-message,
