@@ -152,6 +152,7 @@ button:hover {
   padding: 25px;
   border-radius: 5px;
   background-color: var(--secondary);
+  align-self: center;
 }
 
 .message-details .message-content {
