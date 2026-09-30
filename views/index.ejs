@@ -18,15 +18,15 @@
       <div class="content">
         <div class="board">
           <div class="messages">
-            <% messages.forEach((msg, index) => { %>
+            <% messages.forEach((msg) => { %>
               <div class="message">
 
                 <div class="message-header">
                   <div class="user-info">
-                    <h3 class="user-name"><%= msg.user %></h3> 
-                    <p class="message-date"><strong>Posted: </strong><%= msg.added %></p>
+                    <h3 class="user-name"><%= msg.username %></h3> 
+                    <p class="message-date"><strong>Posted: </strong><%= msg.added.toLocaleString() %></p>
                   </div>
-                <a class="open-message" href="/message/<%= index %>">
+                <a class="open-message" href="/message/<%= msg.id %>">
                   <button >Open</button>
                 </a>
                 </div>

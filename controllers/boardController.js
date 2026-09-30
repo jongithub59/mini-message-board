@@ -1,52 +1,29 @@
 const date = new Date();
-const messages = [
-  {
-    text: "About time someone called me",
-    user: "Shiv",
-    added: date.toLocaleString(),
-    addedFull: date.toString(),
-  },
-  {
-    text: "No more games...",
-    user: "Mirage",
-    added: date.toLocaleString(),
-    addedFull: date.toString(),
-  },
-  {
-    text: "Let's see what this book can do...",
-    user: "Abrams",
-    added: date.toLocaleString(),
-    addedFull: date.toString(),
-  },
-];
+const db = require("../db/queries");
 
-const board_index = (req, res) => {
+// grab messages from db now and give that to the index route
+async function board_index(req, res) {
+  const messages = await db.getMessages(); // fetch messages from db, will be an array like before
   res.render("index", { messages: messages });
-};
+}
 
 const board_new = (req, res) => {
   res.render("new");
 };
-
-const board_new_post = (req, res) => {
+async function board_new_post(req, res) {
   //get content of form through req
   const text = req.body.messageField;
   const user = req.body.userField;
-  const postDate = new Date();
+  // const postDate = new Date();
 
-  messages.push({
-    text: text,
-    user: user,
-    added: postDate.toLocaleString(),
-    addedFull: postDate.toString(),
-  });
+  await db.insertMessage(text, user);
 
   res.redirect("/");
-};
+}
 
-const board_details = (req, res) => {
-  const message = messages[req.params.id];
+async function board_details(req, res) {
+  const message = await db.findMessage(req.params.id);
   res.render("message", { message });
-};
+}
 
 module.exports = { board_index, board_new, board_new_post, board_details };
