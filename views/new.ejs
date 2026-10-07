@@ -9,6 +9,17 @@
   <body>
     <div class="create-message content">
       <h1>Create Message</h1>
+
+      <div class="errors">
+        <% if (locals.errors) {%>
+          <ul>
+            <% errors.forEach(function(error) { %>
+              <li><%= error.msg %></li>
+            <% }); %>
+          </ul>
+        <% } %>
+      </div>
+
       <form action="/new" method="POST">
         <input
           type="text"

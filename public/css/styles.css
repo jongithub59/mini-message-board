@@ -144,6 +144,11 @@ button:hover {
   padding: 5px;
 }
 
+.errors {
+  list-style-type: none;
+  color: red;
+}
+
 .create-message,
 .message-details {
   padding-top: 9em;
